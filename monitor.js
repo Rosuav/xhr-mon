@@ -16,7 +16,7 @@ class XMLHttpRequest extends XMLHttpOriginal {
 			if (this.responseType === "" || this.responseType === "text")
 				req.data = this.responseText;
 			else if (this.responseType === "arraybuffer")
-				req.data = btoa([...new Uint8Array(this.response)]);
+				req.data = [...new Uint8Array(this.response)];
 			else
 				req.data = null;
 			fetch("http://localhost:5000/save", {

@@ -20,3 +20,5 @@ for fn in sys.argv[1:]:
 		try: data = data.decode("utf-8")
 		except UnicodeDecodeError: data = repr(data)
 		print(data)
+	elif req["type"] in ("", "text"):
+		print(req["data"])
